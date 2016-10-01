@@ -1,47 +1,50 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Shows', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
+  var shows = [{
     id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
+    name: 'Audrey',
+    location: 'Chez Audrey',
+    description: 'best show',
+    capacity: 100,
+    price: 100,
+    image: "http://www.woueb.net/wp-content/uploads/2010/12/salle-de-concert-360.jpg",
+    date: '2016-09-28',
+    url: "https://api-shows-tonight.herokuapp.com/shows/1.json"
   }, {
     id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
+    name: 'Beyonce',
+    location: 'Chez Audrey',
+    description: 'best show ever',
+    capacity: 100,
+    price: 1000,
+    image: "http://www.woueb.net/wp-content/uploads/2010/12/salle-de-concert-360.jpg",
+    date:'2016-09-28',
+    url:"https://api-shows-tonight.herokuapp.com/shows/2.json"
   }, {
     id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
-  }];
-
+    name: 'Showtime',
+    location: 'Stade de France',
+    description: 'show',
+    capacity: 200,
+    price: 200,
+    image: "http://www.woueb.net/wp-content/uploads/2010/12/salle-de-concert-360.jpg",
+    date: '2016-09-28',
+    url:"https://api-shows-tonight.herokuapp.com/shows/5.json"
+  },
+  ];
   return {
     all: function() {
-      return chats;
+      return shows;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+
+    get: function(showId) {
+      for (var i = 0; i < shows.length; i++) {
+        if (shows[i].id === parseInt(showId)) {
+          return shows[i];
         }
       }
       return null;
