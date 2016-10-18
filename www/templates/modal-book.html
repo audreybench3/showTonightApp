@@ -13,6 +13,8 @@
     <span class="input-label">Nombre de places</span>
     <input type="number" ng-model="seats">
   </label>
+
+  
 <button class="button button-block button-positive" ng-disabled="!seats || !user_name"  ng-click="book(user_name, seats)">
   Réserver au nom de {{user_name || ''}} pour {{show.price * seats || 0}}€
 </button>
